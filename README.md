@@ -44,7 +44,7 @@ Deepfake detectors are one of the leading methods of combatting deepfake images 
 
 ## Data Preparation
 
-The notebooks in this repository expect the feature maps extracted from a MesoInception-4 model predicting on the FaceForensics++ dataset, structured in specific `train` and `test` folders.
+The notebooks in this repository expect the feature maps extracted from a [MesoInception-4 model](https://github.com/HongguLiu/Deepfake-Detection) predicting on the FaceForensics++ dataset, structured in specific `train` and `test` folders.
 
 1.  **Download FaceForensics++:** Obtain the dataset from the official FaceForensics++ github [FaceForensics++ Github](https://github.com/ondyari/FaceForensics) and by following the instructions on the repository. We used the `raw` and `c23` versions from the DeepFakeDetection Dataset.
 2.  **Preprocessing:**
