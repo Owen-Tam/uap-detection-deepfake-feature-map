@@ -4,11 +4,26 @@ This repository contains the code and models for the paper "Robust deepfake dete
 
 This paper is currently still under development and has not been formally published yet.
 
-[Presentation deck](https://docs.google.com/presentation/d/1_E6na9_de6_WLD2rdXjJKMfRWHSx0fZsA-l5FGFdIYM/edit?usp=sharing) | [Manuscript](https://drive.google.com/file/d/1-mra-p8MwureOam9o9jFJPE6YXF492VP/view?usp=sharing)
+[Presentation deck](https://docs.google.com/presentation/d/1_E6na9_de6_WLD2rdXjJKMfRWHSx0fZsA-l5FGFdIYM/edit?usp=sharing) 
 
 ## Summary
 
 Deepfake detectors are one of the leading methods of combatting deepfake images or photos used in identity fraud or misinformation. However, research has demonstrated that adversarial perturbations added to images are capable of fooling current deepfake models, compromising their effectiveness. While perturbation detectors already exist, a significant challenge lies in ensuring these detectors remain robust and generalisable against unseen perturbation strengths and attack conditions. We hypothesised that increasing the diversity of Universal Adversarial Perturbations (UAPs) within the training dataset would enhance a feature-map-based UAP detector’s generalisability to unseen attacks. Using video frames from the FaceForensics++ dataset, we applied UAPs and extracted feature maps from MesoInception-4. To test our hypothesis, we first developed and optimised a base model, finding that CNNs detecting UAPs on intermediary feature maps in MesoInception-4 generally yielded the best performance. We then compared the performance of our base optimised model trained on limited UAP types against an augmented model with increased UAP diversity in its train set. Our results demonstrated that while the base model exhibited drops in performance when faced with subtle unseen UAPs, the augmented model demonstrated considerably improved accuracy and recall in frame-based and video-based metrics. These findings confirm that training data diversity is crucial for building robust UAP detectors and provides a promising direction for enhancing the overall safety, security and trust in deepfake detection and computer vision against the rising threat of universal adversarial attacks. Future research can further explore broader augmentation strategies and their impact on UAP detectors’ generalisability.
+
+
+## Key results
+
+From the project's experiments:
+
+| Setting | Model / layer | Mean acc. | Mean loss | AUC-ROC |
+|---|---|---:|---:|---:|
+| Seen UAPs (P2, P5) | M3 on `inception_layer_2` | 0.999 | 0.00248 | 1.00 |
+| Seen UAPs (P2, P5) | M3 on `max_pool_layer_1` | 1.00 | 0.00188 | 1.00 |
+| Unseen UAPs (P3, P4) | M3 on `inception_layer_2` | 0.752 | 0.872 | 0.988 |
+| Unseen UAPs (P3, P4) | M3 on `max_pool_layer_1` | 0.853 | 0.407 | 0.996 |
+| Unseen, 30-epoch fine-tune | M3 on `max_pool_layer_1` | 0.992 | 0.0257 | 1.00 |
+
+M0–M3 all reach ≥0.998 mean accuracy on seen UAPs. `max_pool_layer_1` also has a lower seen loss than `inception_layer_2` (0.00188 vs 0.00241) with nearly three times fewer parameters. After the same fine-tune, M3 on `inception_layer_2` reaches 0.995 accuracy.
 
 ## Repository Contents
 
