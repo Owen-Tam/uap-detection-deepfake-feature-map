@@ -4,9 +4,7 @@ This repository contains the code and models for the paper "Robust deepfake dete
 
 This paper is currently still under development and has not been formally published yet.
 
-[Presentation deck](https://docs.google.com/presentation/d/1_E6na9_de6_WLD2rdXjJKMfRWHSx0fZsA-l5FGFdIYM/edit?usp=sharing)
-
-[Manuscript](https://drive.google.com/file/d/1-mra-p8MwureOam9o9jFJPE6YXF492VP/view?usp=sharing)
+[Presentation deck](https://docs.google.com/presentation/d/1_E6na9_de6_WLD2rdXjJKMfRWHSx0fZsA-l5FGFdIYM/edit?usp=sharing) | [Manuscript](https://drive.google.com/file/d/1-mra-p8MwureOam9o9jFJPE6YXF492VP/view?usp=sharing)
 
 ## Summary
 
